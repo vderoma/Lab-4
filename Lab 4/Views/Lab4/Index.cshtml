@@ -5,25 +5,29 @@
     int day;
     string greeting = "";
     int hour;
+    int year = @Model.Year;
     day = @Model.DayOfYear;
-    day = 365 - day;
+    
+    int daysofYear = DateTime.IsLeapYear(@Model.Year)? 366 : 365;
+    int daysLeft = daysofYear - day;
     hour = @Model.Hour;
-    int year = Model.Year;
+
     string date = Model.ToString("dddd, MMMM dd, yyyy");
     string time = Model.ToShortTimeString();
-    
+
+
 
     if (12>hour)
     {
-        greeting = "Good Morning";
+        greeting = "Good Morning!";
     }
     else if (hour >= 12 && hour < 18)
     {
-        greeting = "Good Afternoon";
+        greeting = "Good Afternoon!";
     }
     else
     {
-        greeting = "Good Evening";
+        greeting = "Good Evening!";
 
     }
 }
@@ -32,9 +36,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>@greeting</h2>
+<h1 style="background-color: blue; color: white; padding: 10px; border-radius: 10px;">@greeting</h1>
 <h4>The time is @time on @date</h4>
-<p>There are @day days left in @year </p>
-<a href="/Lab4/Page2" class="btn btn-lg btn-info">Go to page 2</a>
+<p>There are @daysLeft days left in @year </p>
+<a href="/Lab4/Page2" class="btn btn-lg btn-info">Page 2</a>
 
 

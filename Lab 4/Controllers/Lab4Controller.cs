@@ -13,11 +13,7 @@ namespace Lab_4.Controllers
 
             DateTime time = new DateTime();
             time = DateTime.Now;
-
-
-            //string greeting1 = "Good Morning";
-            //string greeting2 = "Good Afternoon";
-            //string greeting3 = "Good Evening";
+            
             return View(time);
 
         }

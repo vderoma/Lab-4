@@ -2,10 +2,10 @@
 
 
 
-<h2 style="padding: 15px; border-radius: 10px; background-color:purple; color:white;"> @ViewData["beverages"]</h2>
+<h1 style="padding: 15px; border-radius: 10px; background-color:purple; color:white;"> @ViewData["beverages"]</h1>
 
 <ol>
-    @foreach (var beverage in Model)
+    @foreach (var beverage in @Model)
     {
         <li>
             @beverage
