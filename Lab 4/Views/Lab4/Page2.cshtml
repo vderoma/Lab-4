@@ -1,0 +1,40 @@
+﻿@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">*@
+<link rel="stylesheet" href="~/css/site.css" />
+
+@model int
+
+@{
+    ViewData["Title"] = "Page2";
+}
+
+<h2 style="background-color:purple; padding:15px; color: white; border-radius: 10px;">Page2 - Random Data</h2>
+<p style="padding-bottom: 10px;">Select the number of profiles to display: </p>
+<div style=" padding-bottom:20px;">
+    <a href="/Lab4/Page2/1" class="btn btn-sm btn-info">1</a>
+    <a href="/Lab4/Page2/2" class="btn btn-sm btn-info">2</a>
+    <a href="/Lab4/Page2/3" class="btn btn-sm btn-info">3</a>
+    <a href="/Lab4/Page2/4" class="btn btn-sm btn-info">4</a>
+    <a href="/Lab4/Page2/5" class="btn btn-sm btn-info">5</a>
+
+
+</div>
+
+
+@for (int i = 1; i < Model+1; i++)
+{
+
+
+<div class="border" style="background-color: gray;">
+    <h3 class="padding" style=" background-color: gray">Profile @i</h3>
+    <p class="padding" style="background-color:white; "><strong>Name:</strong> @LoremNET.Lorem.Words(2, 2) <br /> <strong>Email:</strong> @LoremNET.Lorem.Email() <br /> <strong>Bio:</strong> @LoremNET.Lorem.Paragraph(15, 6)</p>
+</div>
+    <p></p>
+
+
+    
+    
+}
+    <div style="padding-top: 10px;">
+        <a href="/Lab4/Page3" class="btn btn-success btn-lg">Page 3</a>
+
+    </div>

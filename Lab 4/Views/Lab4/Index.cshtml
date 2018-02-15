@@ -1,7 +1,40 @@
 ﻿
+@model System.DateTime
+
+@{ 
+    int day;
+    string greeting = "";
+    int hour;
+    day = @Model.DayOfYear;
+    day = 365 - day;
+    hour = @Model.Hour;
+    int year = Model.Year;
+    string date = Model.ToString("dddd, MMMM dd, yyyy");
+    string time = Model.ToShortTimeString();
+    
+
+    if (12>hour)
+    {
+        greeting = "Good Morning";
+    }
+    else if (hour >= 12 && hour < 18)
+    {
+        greeting = "Good Afternoon";
+    }
+    else
+    {
+        greeting = "Good Evening";
+
+    }
+}
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>@greeting</h2>
+<h4>The time is @time on @date</h4>
+<p>There are @day days left in @year </p>
+<a href="/Lab4/Page2" class="btn btn-lg btn-info">Go to page 2</a>
+
 

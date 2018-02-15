@@ -1,0 +1,14 @@
+﻿@model string[]
+
+
+
+<h2 style="padding: 15px; border-radius: 10px; background-color:purple; color:white;"> @ViewData["beverages"]</h2>
+
+<ol>
+    @foreach (var beverage in Model)
+    {
+        <li>
+            @beverage
+        </li>
+    }
+</ol>

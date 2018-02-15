@@ -10,7 +10,31 @@ namespace Lab_4.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+
+            DateTime time = new DateTime();
+            time = DateTime.Now;
+
+
+            //string greeting1 = "Good Morning";
+            //string greeting2 = "Good Afternoon";
+            //string greeting3 = "Good Evening";
+            return View(time);
+
+        }
+
+        public IActionResult Page2(int id)
+        {
+            
+            return View(id);
+
+        }
+
+        public IActionResult Page3()
+        {
+            string[] beverages = new string[] { "Coffee", "Tea", "Water", "Beer", "Wine" };
+            ViewData["beverages"] = "Beverages";
+            return View(beverages);
+
         }
     }
 }
